@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - CashBash</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+         
+            var activeTab = $("#lblAdmin")[0].outerText;
+            var title = '#' + $("#lblTitle")[0].outerText.trim(); 
+            $(title).css("background-color","rgb(65, 165, 222)")// "#1997a4");
+            $(title).addClass("list-item-group");
+            $(title).css("color", "white");
+            $(title).css("font-weight", "bold");
+            var bgColor ='rgb(65, 165, 222)'//'rgb(146, 82, 28)' //'#1997a4';//blueviolet
+           // var activeTab = localStorage.getItem('activeTab');
+           
+           
+            if (activeTab == 'Admin') {
+               // $("#admin").css("color", "#330099");
+                $("#admin").css("background-color", bgColor);
+                 $("#admin").css("color", "white");
+                $("#admin").css("display", "block");
+                //$("#admin").css("border", "solid");
+            }
+            else if (activeTab == 'Registration') {
+
+                $("#registration").css("color", "white");
+                $("#registration").css("display", "block"); 
+                     $("#registration").css("background-color", bgColor);
+            }
+            else if (activeTab == 'Check In') {
+                $("#checkin").css("color", "white");
+                $("#checkin").css("display", "block"); 
+                     $("#checkin").css("background-color", bgColor);
+            }
+            else if (activeTab == 'Cashier') {
+                $("#cashier").css("color", "white");
+                     $("#cashier").css("background-color", bgColor);
+                  $("#cashier").css("display", "block"); 
+            }
+            else if (activeTab == 'Tabulation') {
+                $("#tabulation").css("color", "white");
+                $("#tabulation").css("display", "block"); 
+                     $("#tabulation").css("background-color", bgColor);
+            }
+            else if (activeTab == 'Emcee') {
+                $("#emcee").css("color", "white");
+                $("#emcee").css("display", "block"); 
+                     $("#emcee").css("background-color", bgColor);
+            }
+            else if (activeTab == 'Reports') {
+                $("#reports").css("color", "white");
+                $("#reports").css("display", "block"); 
+                     $("#reports").css("background-color",bgColor);
+            }
+
+        });
+    </script>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top" style="width:100%">
+        <div class="container">
+            @*<div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+        </div>*@
+            <div style="width:100%">
+                <img src="~/Content/Images/sub_banner.gif" alt="Logo" style="background-repeat:no-repeat; width:100%">
+                <nav class="navbar navbar-expand-sm bg-warning" style="padding:0">
+                    <ul class=" navbar-nav list-group font-weight-bold">
+                        <li class="nav-item text-dark">@Html.ActionLink("Registration", "SearchRegistration", "Registration", new { area = "" }, new { @class = "nav-link", id = "registration" })</li>
+                        <li class="nav-item text-dark">@Html.ActionLink("Check In", "Index", "CheckIn", new { area = "" }, new { @class = "nav-link", id = "checkin" })</li>
+                        <li class="nav-item text-dark">@Html.ActionLink("Tabulation", "Index", "Tabulation", new { area = "" }, new { @class = "nav-link", id = "tabulation" })</li>
+                        <li class="nav-item text-dark">@Html.ActionLink("Emcee", "Index", "Emcee", new { area = "" }, new { @class = "nav-link", id = "emcee" })</li>
+                        <li class="nav-item text-dark">@Html.ActionLink("Cashier", "Index", "Cashier", new { area = "" }, new { @class = "nav-link", id = "cashier" })</li>
+                        <li class="nav-item text-dark">@Html.ActionLink("Reports", "Index", "Reports", new { area = "" }, new { @class = "nav-link", id = "reports" })</li>
+                        <li class="nav-item text-dark">@Html.ActionLink("Admin", "SearchUser", "Admin", new { area = "" }, new { @class = "nav-link", id = "admin" })</li>
+                    </ul>
+                </nav>
+            </div>
+ 
+
+            <div  class="col-md-9 border" >
+                <!-- Content here -->
+                @RenderBody()
+            </div>
+            <div class="col-md-3 border align-self-start text-center">
+                @{
+                    Html.RenderPartial("_MenuPartialView");
+                }
+                @* <nav class="navbar  text-left align-items-baseline" style="height:310px">
+            <ul id="subSection" class="navbar-nav list-group">
+                @foreach (var item in ViewBag.v)
+                {
+
+                    <li class="nav-item " style="width:225px">
+                        <a class="nav-link bold btn btn-outline-primary" style="text-decoration:underline" id=@item.ActionName href=@item.ActionName> @item.Name</a>
+                    </li>
+
+                }
+            </ul>
+        </nav>*@
+
+            </div>
+        </div>
+    </div> 
+    <footer class="fixed-bottom">
+         @*<p>&copy; @DateTime.Now.Year - My CashBash Application</p>*@ 
+    </footer>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

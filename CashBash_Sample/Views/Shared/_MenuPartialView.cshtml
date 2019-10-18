@@ -1,0 +1,19 @@
+﻿
+<label id="lblAdmin" class=" font-weight-bold text-primary"> @ViewBag.controller</label>
+<label id="lblTitle" style="display:none"> @ViewBag.Title</label>
+@*<nav class="navbar  text-left " style="height:300px">*@
+    <nav class="navbar  text-left align-items-baseline" style="height:310px">
+        <ul id="subSection" class="navbar-nav list-group">
+            @foreach (var item in ViewBag.Menu)
+            {
+
+                <li class="nav-item " style="width:225px">
+                    <a class="nav-link bold btn btn-outline-primary" style="text-decoration:underline" id=@item.ActionName href=@item.ActionName> @item.Name</a>
+                </li>
+
+            }
+            @*<li class="nav-item " style="width:225px">
+                <a class="nav-link bold btn btn-outline-primary" style="text-decoration:underline" id='LogOut' href='~/Login/Index'> Log out</a>
+            </li>*@
+        </ul>
+    </nav>

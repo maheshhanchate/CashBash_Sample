@@ -1,0 +1,134 @@
+﻿
+@{
+    ViewBag.Title = "SearchUser";
+}
+<h4 class="text-center">Cash Bash 2019 - Viva Las Vegas Bash</h4>
+<h5 id="idh" class="text-primary">Search User</h5>
+<form id="configform" name="input" action="#" method="get">
+    <div class="col form-control-sm h-auto" id="mainDiv" style="display:block">
+        <div class="form-group row ">
+            <label for="inputEmail" class="col-md-2 col-form-label">User Role:</label>
+            <div class="col-md-4">
+                <select id="ddlReg" class="form-control form-control-sm w-75">
+                    <option></option>
+                    <option>Admin</option>
+                    <option>Registra</option>
+                    <option>Tabulator</option>
+                    <option>Cashier</option>
+                    <option>Check</option>
+                </select>
+            </div>
+
+            <label for="inputEmail" class="col-md-2 col-form-label">User ID:</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control w-75" id="uname">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputEmail" class="col-md-2 col-form-label">First Name:</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control w-75" id="uname">
+            </div>
+
+            <label for="inputEmail" class="col-md-2 col-form-label">Last Name:</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control w-75" id="uname">
+            </div>
+        </div>
+        <div class="form-group row ">
+            <label for="inputEmail" class="col-md-2 col-form-label">Event Name:</label>
+            <div class="col-md-4">
+                <select id="Select2" class="form-control form-control-sm w-75">
+                    <option></option>
+                    <option>Annual Incentive Trip 2017</option>
+                    <option>Annual Incentive Trip 2015</option>
+                    <option>Cash Bash 2014</option>
+                    <option>Annual Incentive Trip 2013</option>
+                    <option>Cash Bash 2011-Cruisin for Cash</option>
+                    <option>Cash Bash 2010-Wonderland Bash</option>
+                    <option>Cash Bash 2009</option>
+                    <option>Cash Bash 2008-Cashablanca</option>
+                </select>
+            </div>
+
+            <label for="inputEmail" class="col-md-2  col-form-label">Inactive:</label>
+            <div class="col-md-3 ml-4 ">
+                <input type="checkbox"  class="  form-check-input "  id="gridCheck1">
+            </div>
+        </div>
+        <div class="form-group row">
+            <a style="text-decoration:underline" href="#" onclick="alert('Successfully cleared users for this event any other events!');"> Clear Users from Other Events</a>
+
+        </div>
+        <div>
+            <span>&nbsp</span>
+        </div>
+        <div class="col">
+            <div class="form-group row">
+                <div class="col-sm-10 offset-sm-2 text-center">
+                    <button type="reset" class="btn btn-primary" onclick="return reset();">Reset</button>
+                    <button type="submit" id="btnSubmit" class="btn btn-primary" onclick="return search();">Search</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    </form>
+
+    <table class="table border table-sm h-auto" id="tblGrid" style="display:none">
+        <thead class="thead-light">
+            <tr>
+                <th>Role</th>
+                <th>User ID</th>
+                <th>User Name</th>
+                <th>Event ID</th>
+                <th>Event</th>
+                <th>Last Updated By</th>
+                <th>Last Updated Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>ADM</td>
+                <td>batcher</td>
+                <td>Batcher,batcher</td>
+                <td>1020</td>
+                <td>Cash Bash 2005 - Viva Las Vegas Bash</td>
+                <td>CASHBASH</td>
+                <td>10/22/2002 7:09:18 PM</td>
+            </tr>
+            <tr>
+                <td>ADM</td>
+                <td>batcher</td>
+                <td>Batcher,batcher</td>
+                <td>1020</td>
+                <td>Cash Bash 2005 - Viva Las Vegas Bash</td>
+                <td>CASHBASH</td>
+                <td>10/22/2002 7:09:18 PM</td>
+            </tr>
+            <tr>
+                <td>ADM</td>
+                <td>batcher</td>
+                <td>Batcher,batcher</td>
+                <td>1020</td>
+                <td>Cash Bash 2005 - Viva Las Vegas Bash</td>
+                <td>CASHBASH</td>
+                <td>10/22/2002 7:09:18 PM</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        function search() {
+            document.getElementById("tblGrid").style.display = "block";
+            document.getElementById("mainDiv").style.display = "none";
+             document.getElementById("idh").innerHTML = "Search Result";
+            return false;
+        }
+         function reset() {
+            $('#configform')[0].reset();
+            return false;
+        }
+
+    </script>

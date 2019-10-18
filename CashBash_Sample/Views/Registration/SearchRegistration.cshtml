@@ -1,0 +1,346 @@
+﻿
+@{
+    ViewBag.Title = "SearchRegistration";
+}
+<h4 class="text-center">Cash Bash 2019 - Viva Las Vegas Bash</h4>
+<h5 id="idh" class="text-primary">Search Registration</h5>
+
+<form id="configform" name="input" action="#" method="get">
+    <div class="col form-control-sm h-auto" id="divMain">
+        <div class="form-group row ">
+            <label for="inputEmail" class="col-md-2 col-form-label">Attendee Type:</label>
+            <div class="col-md-4">
+                <select id="Select1" class="form-control form-control-sm w-75">
+                    <option></option>
+                    <option>Winner</option>
+                    <option>Guest</option>
+                    <option>Staff</option>
+                </select>
+            </div>
+
+            <label for="inputEmail" class="col-md-2 col-form-label">Title:</label>
+            <div class="col-md-4">
+                <select id="Select1" class="form-control form-control-sm w-75">
+                    <option></option>
+                    <option>
+                        Owner
+                    </option>
+                    <option>
+                        F&I Manager
+                    </option>
+                    <option>
+                        CEO
+                    </option>
+                    <option>
+                        CFO
+                    </option>
+                    <option>
+                        COO
+                    </option>
+                    <option>
+                        General Manager
+                    </option>
+                    <option>
+                        F&I Director
+                    </option>
+                    <option>
+                        Non-Affiliated
+                    </option>
+                    <option>
+                        Business Manager
+                    </option>
+                    <option>
+                        General Sales Manager
+                    </option>
+                    <option>
+                        Sales Manager
+                    </option>
+                    <option>
+                        Service Director
+                    </option>
+                    <option>
+                        Sales Director
+                    </option>
+                    <option>
+                        President
+                    </option>
+                    <option>
+                        Vice Pres
+                    </option>
+                    <option>  Service Manager</option>
+                    <option>Winner</option>
+                    <option>Guest</option>
+                    <option>Staff</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputEmail" class="col-md-2 col-form-label">First Name:</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control w-75" id="uname">
+            </div>
+            <label for="inputEmail" class="col-md-2 col-form-label">Last Name:</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control w-75" id="uname">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputEmail" class="col-md-2 col-form-label">Arrival Date:</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control w-75" id="uname">
+            </div>
+
+            <label for="inputEmail" class="col-md-2 col-form-label">Departure Date:</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control w-75" id="uname">
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group row">
+                <div class="col-md-3 offset-md-5 text-center ">
+                    <label for="inputEmail" class="col-form-label">VIP:</label>
+                    <input type="checkbox" id="uname">
+                    @*</div>
+
+                        <div class="col-md-3">*@
+                    <label for="inputEmail" class="col-form-label">Cancelled:</label>
+                    <input type="checkbox" id="uname">
+                </div>
+            </div>
+        </div>
+        <div> &nbsp; </div>
+        <div class="col">
+            <div class="form-group row">
+                <div class="col-sm-10 offset-sm-2 text-center">
+                    <button type="reset" class="btn btn-primary" onclick="return reset();">Reset</button>
+                    <button type="submit" id="btnSubmit" class="btn btn-primary" onclick="return search();">Search</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </form>
+<div id="divTbl" style="display:none" class="text-right font-weight-bold">
+    <label >Total Records Found:15</label>
+</div>
+    <table class="table border  table-sm pre-scrollable" id="tblGrid" style="display:none">
+        <thead class="thead-light">
+            <tr>
+                <th>Attnd Type</th>
+                <th>SSN</th>
+                <th>Attendee Id</th>
+                <th>Attendee Name</th>
+                <th>Guest</th>
+                <th>Dealer Name</th>
+                <th>Stage Name</th>
+                <th>Group Name</th>
+                <th>Abs</th>
+                <th>Pulls</th>
+                <th>Split %</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Winner</td>
+                <td>xxx-xx-5933 </td>
+                <td>9969</td>
+                <td> Accardi, Joseph </td>
+                <td>Add</td>
+                <td> EDDIE ACCARDI DODGE CHRYS JEEP</td>
+                <td></td>
+                <td></td>
+                <td> No</td>
+                <td>3</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>Winner</td>
+                <td>xxx-xx-5933 </td>
+                <td>9969</td>
+                <td> Accardi, Joseph </td>
+                <td>Add</td>
+                <td> EDDIE ACCARDI DODGE CHRYS JEEP</td>
+                <td></td>
+                <td></td>
+                <td> No</td>
+                <td>3</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>Winner</td>
+                <td>xxx-xx-5933 </td>
+                <td>9969</td>
+                <td> Accardi, Joseph </td>
+                <td>Add</td>
+                <td> EDDIE ACCARDI DODGE CHRYS JEEP</td>
+                <td></td>
+                <td></td>
+                <td> No</td>
+                <td>3</td>
+                <td>100</td>
+            </tr>
+
+            <tr>
+                <td>Winner</td>
+                <td>xxx-xx-5933 </td>
+                <td>9969</td>
+                <td> Accardi, Joseph </td>
+                <td>Add</td>
+                <td> EDDIE ACCARDI DODGE CHRYS JEEP</td>
+                <td></td>
+                <td></td>
+                <td> No</td>
+                <td>3</td>
+                <td>100</td>
+            </tr>
+
+            <tr>
+                <td>Winner</td>
+                <td>xxx-xx-5933 </td>
+                <td>9969</td>
+                <td> Accardi, Joseph </td>
+                <td>Add</td>
+                <td> EDDIE ACCARDI DODGE CHRYS JEEP</td>
+                <td></td>
+                <td></td>
+                <td> No</td>
+                <td>3</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>Winner</td>
+                <td>xxx-xx-5933 </td>
+                <td>9969</td>
+                <td> Accardi, Joseph </td>
+                <td>Add</td>
+                <td> EDDIE ACCARDI DODGE CHRYS JEEP</td>
+                <td></td>
+                <td></td>
+                <td> No</td>
+                <td>3</td>
+                <td>100</td>
+            </tr>
+
+            <tr>
+                <td>Winner</td>
+                <td>xxx-xx-5933 </td>
+                <td>9969</td>
+                <td> Accardi, Joseph </td>
+                <td>Add</td>
+                <td> EDDIE ACCARDI DODGE CHRYS JEEP</td>
+                <td></td>
+                <td></td>
+                <td> No</td>
+                <td>3</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>Winner</td>
+                <td>xxx-xx-5933 </td>
+                <td>9969</td>
+                <td> Accardi, Joseph </td>
+                <td>Add</td>
+                <td> EDDIE ACCARDI DODGE CHRYS JEEP</td>
+                <td></td>
+                <td></td>
+                <td> No</td>
+                <td>3</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>Winner</td>
+                <td>xxx-xx-5933 </td>
+                <td>9969</td>
+                <td> Accardi, Joseph </td>
+                <td>Add</td>
+                <td> EDDIE ACCARDI DODGE CHRYS JEEP</td>
+                <td></td>
+                <td></td>
+                <td> No</td>
+                <td>3</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>Winner</td>
+                <td>xxx-xx-5933 </td>
+                <td>9969</td>
+                <td> Accardi, Joseph </td>
+                <td>Add</td>
+                <td> EDDIE ACCARDI DODGE CHRYS JEEP</td>
+                <td></td>
+                <td></td>
+                <td> No</td>
+                <td>3</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>Winner</td>
+                <td>xxx-xx-5933 </td>
+                <td>9969</td>
+                <td> Accardi, Joseph </td>
+                <td>Add</td>
+                <td> EDDIE ACCARDI DODGE CHRYS JEEP</td>
+                <td></td>
+                <td></td>
+                <td> No</td>
+                <td>3</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>Winner</td>
+                <td>xxx-xx-5933 </td>
+                <td>9969</td>
+                <td> Accardi, Joseph </td>
+                <td>Add</td>
+                <td> EDDIE ACCARDI DODGE CHRYS JEEP</td>
+                <td></td>
+                <td></td>
+                <td> No</td>
+                <td>3</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>Winner</td>
+                <td>xxx-xx-5933 </td>
+                <td>9969</td>
+                <td> Accardi, Joseph </td>
+                <td>Add</td>
+                <td> EDDIE ACCARDI DODGE CHRYS JEEP</td>
+                <td></td>
+                <td></td>
+                <td> No</td>
+                <td>3</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>Winner</td>
+                <td>xxx-xx-5933 </td>
+                <td>9969</td>
+                <td> Accardi, Joseph </td>
+                <td>Add</td>
+                <td> EDDIE ACCARDI DODGE CHRYS JEEP</td>
+                <td></td>
+                <td></td>
+                <td> No</td>
+                <td>3</td>
+                <td>100</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        function search() {
+            document.getElementById("tblGrid").style.display = "block";
+            document.getElementById("divTbl").style.display = "block";
+            
+            document.getElementById("divMain").style.display = "none";
+            document.getElementById("idh").innerHTML = "Search Result";
+            
+            return false;
+        }
+        function reset() {
+            $('#configform')[0].reset();
+            return false;
+        }
+
+    </script>

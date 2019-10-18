@@ -1,0 +1,308 @@
+﻿
+@{
+    ViewBag.Title = "AddUser";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4 class="text-center">Cash Bash 2019 - Viva Las Vegas Bash</h4>
+<h5 class="text-primary">Add User</h5>
+<div id="divmessage" style="height:300px; display:none" class="text-center"><span id="successmsg">User successfully added!</span></div>
+
+<div class="col form-control-sm h-auto" id="formAddUser">
+    <form id="needs-validation" onsubmit="return Submit()" novalidate>
+        <div class="form-group row">
+            <label for="inputEmail" class="col-md-2 col-form-label text-danger">User ID:</label>
+            <div class="col-md-3">
+                <input type="text" class="form-control" id="unameid" required>
+                <div class="invalid-tooltip">Please enter User ID</div>
+            </div>
+            <div class="col-md-1"></div>
+            <label for="inputEmail" class="col-md-3 col-form-label">InActive:</label>
+            <div class="col-md-3">
+                <input type="checkbox" id="chkactive">
+            </div>
+
+        </div>
+        <div class="form-group row">
+            <label for="inputEmail" class="col-md-2 col-form-label text-danger">Password:</label>
+            <div class="col-md-3">
+                <input type="password" class="form-control"  required="required" id="pwd">
+                <div class="invalid-tooltip">Please enter Password</div>
+            </div>
+            <div class="col-md-1"></div>
+            <label for="inputEmail" class="col-md-3 col-form-label text-danger">ReType Password:</label>
+            <div class="col-md-3">
+                <input type="password" class="form-control" id="retypepwd" required>
+                <div class="invalid-tooltip">Please enter Password</div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputEmail" class="col-md-2 col-form-label text-danger">First Name:</label>
+            <div class="col-md-3">
+                <input type="text" class="form-control" id="uname" required>
+                <div class="invalid-tooltip">Please enter First Name</div>
+            </div>
+            <div class="col-md-1"></div>
+            <label for="inputEmail" class="col-md-3 col-form-label text-danger">Last Name:</label>
+            <div class="col-md-3">
+                <input type="text" class="form-control" id="luname" required>
+                <div class="invalid-tooltip">Please enter Last Name</div>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="form-group row">
+            <div class="col text-center">
+                <label for="inputEmail" class="col-md-3 col-form-label text-danger">Select an Event:</label>
+                <select id="Select1">
+                    <option>
+                        Annual Incentive Trip 2019
+                    </option>
+                    <option>
+                        Annual Incentive Trip 2018
+                    </option>
+                    <option>
+                        Cash Bash 2018
+                    </option>
+                    <option>
+                        Annual Incentive Trip 2019
+                    </option>
+                    <option>
+                        Cash Bash 2017 - Cruisin for Cash
+                    </option>
+                </select>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="form-group row">
+                <div class="col-md-6 offset-md-4">
+                    @*<label for="inputEmail" class="col-form-label">VIP:</label>
+                        <input type="checkbox" id="uname">
+
+                        <label for="inputEmail" class="col-form-label">Cancelled:</label>
+                        <input type="checkbox" id="uname">*@
+
+                    <table class="table table-sm" border="0">
+                        <thead>
+                            <tr class="text-center" style="BACKGROUND-COLOR: lightsteelblue; color:#0066ff">
+                                <th scope="col">Role</th>
+                                <th scope="col">Access Level</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="checkbox" id="Registrar"  onclick="chkRole_Click()"><b> Registrar</b></td>
+                                <td class="text-center">
+                                    <select class="clsInput" id="Registrar1">
+                                        <option value=0></option>
+                                        <option value=1>Read&Write</option>
+                                        <option value=2>Read</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="Cashier"  onclick="chkRole_Click()"><b> Cashier</b></td>
+                                <td class="text-center">
+                                    <select class="clsInput" id="Cashier1">
+                                        <option value=0></option>
+                                        <option value=1>Read&Write</option>
+                                        <option value=2>Read</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="CheckIn" onclick="chkRole_Click()"><b> CheckIn</b></td>
+                                <td class="text-center">
+                                    <select class="clsInput" id="CheckIn1">
+                                        <option value=0></option>
+                                        <option value=1>Read&Write</option>
+                                        <option value=2>Read</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="Tabulator" onclick="chkRole_Click()"><b> Tabulator</b></td>
+                                <td class="text-center">
+                                    <select class="clsInput" id="Tabulator1">
+                                        <option value=0></option>
+                                        <option value=1>Read&Write</option>
+                                        <option value=2>Read</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="Emcee" onclick="chkRole_Click()"><b> Emcee</b></td>
+                                <td class="text-center">
+                                    <select class="clsInput" id="Emcee1">
+                                        <option value=0></option>
+                                        <option value=1>Read&Write</option>
+                                        <option value=2>Read</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="Admin" onclick="chkRole_Click()"><b> Admin</b></td>
+                                <td class="text-center">
+                                    <select class="clsInput" id="Admin1">
+                                        <option value=0></option>
+                                        <option value=1>Read&Write</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <span>Note: Red label signifies required input.</span>
+        </div>
+
+        <div class="col">
+            <div class="form-group row">
+                <div class="col-sm-10 offset-sm-2 text-center">
+                    <button type="reset" class="btn btn-primary" value="reset">Reset</button>
+                    <button type="submit" value="Submit" id="btnSubmit" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+
+
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+        'use strict';
+        window.addEventListener('load', function () {
+            var form = document.getElementById('needs-validation');
+            form.addEventListener('submit', function (event) {
+                if (form.checkValidity() === false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            }, false);
+        }, false);
+    })();
+    function Submit() {
+
+        if (ValidationEvent()) {
+            var firstname = document.getElementById("uname").value;
+            var lastname = document.getElementById("luname").value;
+
+            var spantag = document.getElementById("successmsg");
+            spantag.innerHTML = firstname +" "+ lastname + " successfully added !"
+
+            document.getElementById("formAddUser").style.display = "none";
+            document.getElementById("divmessage").style.display = "block";
+            //document.getElementById("divmessage").classList.remove("text-hide");
+            //return true;
+        }
+         return false;
+    }
+
+    // Below Function Executes On Form Submit
+    function ValidationEvent() {
+        // Storing Field Values In Variables
+        var userid = document.getElementById("unameid").value;
+        var pwd = document.getElementById("pwd").value;
+        var retypepwd = document.getElementById("retypepwd").value;
+        var firstname = document.getElementById("uname").value;
+        var lastname = document.getElementById("luname").value;
+
+        // Conditions
+        if (userid != '' && pwd != '' && retypepwd != '' && firstname != '' && lastname != '') {
+            //if (pwd.length > 5)
+            if (pwd == retypepwd) {
+                //alert("All type of validation has done on OnSubmit event.");
+                return true;
+            }
+            else {
+                alert("Invalid ReType Password!");
+                return false;
+            }
+        } else {
+            //alert("All fields are required.....!");
+            return false;
+        }
+    }
+
+
+
+    function chkRole_Click() {
+        if (Registrar.checked == false) {
+            Registrar1.selectedIndex = 0
+            Registrar1.disabled = true
+            Registrar1.style.backgroundColor = '#ccc';
+        }
+        else if (Registrar.checked == true) {
+            Registrar1.disabled = false
+            Registrar1.selectedIndex = 1
+            Registrar1.style.backgroundColor = '#fff';
+        }
+
+        if (Cashier.checked == false) {
+            Cashier1.selectedIndex = 0
+            Cashier1.disabled = true;
+            Cashier1.style.backgroundColor = '#ccc';
+        }
+        else if (Cashier.checked == true) {
+            Cashier1.disabled = false
+            Cashier1.selectedIndex = 1
+            Cashier1.style.backgroundColor = '#fff';
+        }
+
+        if (CheckIn.checked == false) {
+            CheckIn1.selectedIndex = 0
+            CheckIn1.disabled = true
+            CheckIn1.style.backgroundColor = '#ccc';
+        }
+        else if (CheckIn.checked == true) {
+            CheckIn1.disabled = false
+            CheckIn1.selectedIndex = 1
+            CheckIn1.style.backgroundColor = '#fff';
+        }
+
+        if (Tabulator.checked == false) {
+            Tabulator1.selectedIndex = 0
+            Tabulator1.disabled = true
+            Tabulator1.style.backgroundColor = '#ccc';
+        }
+        else if (Tabulator.checked == true) {
+            Tabulator1.disabled = false
+            Tabulator1.selectedIndex = 1
+            Tabulator1.style.backgroundColor = '#fff';
+        }
+
+        if (Emcee.checked == false) {
+            Emcee1.selectedIndex = 0
+            Emcee1.disabled = true
+            Emcee1.style.backgroundColor = '#ccc';
+        }
+        else if (Emcee.checked == true) {
+            Emcee1.disabled = false
+            Emcee1.selectedIndex = 1
+            Emcee1.style.backgroundColor = '#fff';
+        }
+
+        if (Admin.checked == false) {
+            Admin1.selectedIndex = 0
+            Admin1.disabled = true
+            Admin1.style.backgroundColor = '#ccc';
+        }
+        else if (Admin.checked == true) {
+            Admin1.disabled = false
+            Admin1.selectedIndex = 1
+            Admin1.style.backgroundColor = '#fff';
+        }
+    }
+
+</script>
+

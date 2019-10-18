@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - CashBash</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+   
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top" style="width:100%">
+        <div class="container">
+
+            <div style="width:100%">
+                <img src="~/Content/Images/sub_banner.gif" alt="Logo" style="background-repeat:no-repeat; width:100%">
+                @*<nav class="navbar navbar-expand-sm bg-warning" style="background-image:url(../../Content/Images/sub_banner.gif); background-repeat:no-repeat; background-position:top; background-size:contain">*@
+                <nav class="navbar navbar-expand-sm bg-warning" style="padding:0">
+                    <ul class="nav navbar-nav font-weight-bold ">
+                        <li class="nav-item">@Html.ActionLink("Login", "Index", "Login", new { area = "" }, new { @class = "nav-link" })</li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="col-md-9 border" style="height:200px">
+                <!-- Content here -->
+                @RenderBody()
+            </div>
+            <div class="col-md-3 border  align-self-start text-center" style="height:200px">
+
+                <label class=" font-weight-bold text-primary"> Login</label>
+
+                <nav class="navbar text-center align-items-baseline" >
+                    <ul class=" list-group">
+                        @*<li class="nav-item">
+                            <a class="nav-link btn-link" href="~/login/index">Login</a>
+                        </li>*@
+                        <li  style="width:225px;color:white;background-color:rgb(65, 165, 222);font-weight:bold">
+                            <a class="nav-link bold btn btn-outline-primary" style="color:white;text-decoration:underline" href="~/login/index">Login</a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </div>
+        </div>
+    </div>
+
+    @*<hr /> <footer>
+        <p>&copy; @DateTime.Now.Year - My CashBash Application</p>
+    </footer>*@
+
+    @Scripts.Render("~/bundles/bootstrap")
+    @*@RenderSection("scripts", required: false)*@
+</body>
+</html>
